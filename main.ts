@@ -7,6 +7,7 @@ const W = 1024;
 const H = 1024;
 const px = new Uint8Array(W * H * 3);
 
+// Contrast: gold leads, cool accents separate beats, muted grays keep body copy readable.
 const C = {
   bg: [11, 15, 21],
   panel: [19, 25, 33],
@@ -317,6 +318,7 @@ for (let i = 0; i < regionLabels.length; i++) {
   text(r[0] + 9, r[1] - 1, r[2], r[3], 1, 1);
 }
 
+// Hierarchy: exact date first, eight cards second, world map third; one front page.
 const cards = [
   ['TRUMP XI PUTIN', 'HISTORIC TRILATERAL SUMMIT AFTER APEC SHENZHEN', C.gold, 'summit'],
   ['IRAN DEAL', 'TRUMP SEEKS PERMANENT AGREEMENT AS IRAN WARNS OF RETALIATION', C.red, 'deal'],
@@ -384,6 +386,7 @@ px2 += pill(px2, 940, 'AFRICA', C.green) + 10;
 text(28, 996, 'MAKEFUN NEWS // VISUAL SUMMARY // SUNDAY 22 NOVEMBER 2026 // FIGURES AS SUPPLIED', C.muted, 1, 1);
 text(872, 996, '01 / 01', C.gold, 1, 1);
 
+// Determinism: fixed pixels, fixed zlib level, CRC on every chunk, no clock/RNG.
 const crcTable = new Uint32Array(256);
 for (let i = 0; i < 256; i++) {
   let c = i;
